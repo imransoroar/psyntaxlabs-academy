@@ -333,7 +333,7 @@ body.on-curriculum .curr-full{max-height:none!important}
           </div>
         </div>
       </div>
-      <div class="rv">
+      <div class="rv hero-visual">
         <div class="terminal">
           <div class="term-head">
             <span class="term-dot" style="background:#fb7185"></span>
@@ -359,11 +359,11 @@ body.on-curriculum .curr-full{max-height:none!important}
 <!-- ============ STATS ============ -->
 <section class="stats" id="stats" data-page="home">
   <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat rv"><b><span class="count" data-to="48">0</span></b><span>live sessions &middot; 4 hrs a week &middot; 6 months</span></div>
-      <div class="stat rv"><b><span class="count" data-to="6">0</span><em>max</em></b><span>students max per group</span></div>
-      <div class="stat rv"><b><span class="count" data-to="20">0</span><em>+</em></b><span>years of real engineering in every class</span></div>
-      <div class="stat rv"><b><span class="count" data-to="1">0</span></b><span>money-making app shipped — guaranteed</span></div>
+    <div class="stats-strip rv">
+      <div class="ss-item"><b><span class="count" data-to="48">0</span></b><span>live sessions</span></div>
+      <div class="ss-item"><b><span class="count" data-to="6">0</span></b><span>max per group</span></div>
+      <div class="ss-item"><b><span class="count" data-to="20">0</span>+</b><span>years engineering</span></div>
+      <div class="ss-item"><b>£<span class="count" data-to="18">0</span></b><span>per hour</span></div>
     </div>
   </div>
 </section>
@@ -1454,6 +1454,74 @@ footer{background:rgba(15,23,42,.025)}
 body.on-curriculum .curr-tabs{background:rgba(245,246,251,.92)}
 .stat,.pillar,.method-card,.review,.pro-card,.tr-card,.pick,.curr-card,.faq-item,.tp-badge{box-shadow:0 4px 18px rgba(15,23,42,.05)}
 .price-card{box-shadow:0 8px 34px rgba(8,145,178,.12)}
+</style>
+<style>
+/* ============ V4 DESIGN POLISH (the hats' verdict) ============ */
+/* hero: give the light version drama */
+.hero{padding:150px 0 84px}
+.hero h1{font-size:clamp(2.6rem,5.8vw,4.3rem);letter-spacing:-.03em}
+.hero-visual{position:relative}
+.hero-visual::before{content:"";position:absolute;inset:-14% -12%;z-index:-1;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(34,211,238,.22),rgba(139,124,246,.15) 55%,transparent 78%);filter:blur(4px)}
+.terminal{transform:rotate(1.2deg);box-shadow:0 30px 70px -18px rgba(15,23,42,.38),0 8px 24px rgba(15,23,42,.12)}
+.hero-badge{background:#fff;border-color:rgba(15,23,42,.12);box-shadow:0 2px 10px rgba(15,23,42,.06);font-weight:600}
+/* buttons: ghost was washed out */
+.btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.13);box-shadow:0 2px 10px rgba(15,23,42,.06)}
+.btn-ghost:hover{border-color:var(--cyan);background:#fff}
+/* stats strip */
+.stats{padding:20px 0 64px}
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 36px rgba(15,23,42,.08);overflow:hidden}
+.ss-item{padding:30px 18px;text-align:center;border-right:1px solid var(--line)}
+.ss-item:last-child{border-right:none}
+.ss-item b{font-family:var(--font-d);font-size:2.6rem;font-weight:700;display:block;line-height:1.15;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ss-item span{color:var(--muted);font-size:.9rem;font-weight:500}
+/* marquee: visible ticker */
+.marquee{background:#fff}
+.marq-track span{color:var(--muted);font-weight:500}
+.marq-track span i{color:var(--violet)}
+/* section rhythm: soft color washes */
+#pillars{background:radial-gradient(ellipse 60% 50% at 88% 8%,rgba(34,211,238,.08),transparent 60%)}
+#tracks{background:radial-gradient(ellipse 60% 55% at 8% 12%,rgba(139,124,246,.08),transparent 60%)}
+#reviews{background:radial-gradient(ellipse 60% 50% at 92% 6%,rgba(139,124,246,.09),transparent 60%)}
+#mentor{background:radial-gradient(ellipse 55% 55% at 6% 18%,rgba(34,211,238,.07),transparent 60%)}
+/* guarantee & pricing: gradient-ring "signed certificate" cards */
+.guar-card{border:2px solid transparent;
+  background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(139,124,246,.06) 50%,rgba(163,230,53,.10)) padding-box,
+             linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(120deg,rgba(34,211,238,.65),rgba(139,124,246,.5),rgba(163,230,53,.6)) border-box}
+.guar-card::before{display:none}
+.price-card{border:2px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box}
+.final-card{border:2px solid transparent;
+  background:radial-gradient(ellipse 80% 90% at 50% 0%,rgba(34,211,238,.09),rgba(255,255,255,0) 60%) padding-box,
+             linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(120deg,rgba(34,211,238,.55),rgba(139,124,246,.45),rgba(163,230,53,.55)) border-box}
+/* roadmap: level badges, not gray coins */
+.road-dot{background:var(--grad);color:#06222b;border:none;font-weight:700}
+.road-steps::before{opacity:.5;height:3px}
+.road-step .rs-tag{background:#fff}
+/* one premium dark accent: the 18+ agency card */
+.adult-card{--text:#eaeef8;--muted:#9aa3ba;--dim:#6b7490;--line:rgba(255,255,255,.1);--violet:#a78bfa;
+  background:linear-gradient(160deg,#101736,#0a0e1c);border-color:rgba(255,255,255,.08);color:var(--text)}
+.adult-card::after{color:rgba(255,255,255,.045)}
+.adult-card .btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#eaeef8;box-shadow:none}
+.adult-card .btn-ghost:hover{border-color:#22d3ee;color:#22d3ee}
+/* reviews: quote glyph instead of more words */
+.review{position:relative}
+.review::before{content:"\201C";position:absolute;top:8px;right:20px;font-family:var(--font-d);font-size:3.4rem;line-height:1;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.45}
+/* nfe chips */
+.nfe-chip{background:#fff;box-shadow:0 4px 14px rgba(15,23,42,.06)}
+.nfe-chip i{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+/* pillar icons pop a little more */
+.pillar .p-ic{width:54px;height:54px;border-radius:15px}
+@media (max-width:1020px){
+  .stats-strip{grid-template-columns:1fr 1fr}
+  .ss-item:nth-child(2){border-right:none}
+  .ss-item:nth-child(1),.ss-item:nth-child(2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:720px){.terminal{transform:none}.hero{padding:122px 0 60px}}
 </style>
 <script>
 /* ---------- nav ---------- */
